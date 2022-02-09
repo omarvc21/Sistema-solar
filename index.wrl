@@ -36,7 +36,9 @@ radius 3
 ]
 }
 ]
-}Transform {
+}
+
+Transform {
 children [
 DEF MERCURIO Transform {
 children [
@@ -285,9 +287,57 @@ radius 3
 ]
 }
    DEF solt TimeSensor {
-cycleInterval 8
+cycleInterval 6
 loop TRUE
 }
+
+
+
+DEF Mer TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+
+DEF Ven TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+
+DEF Ti TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+DEF ma TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+DEF ju TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+DEF sa TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+
+DEF ura TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+DEF net TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+
+
+
 
 DEF timer1 TimeSensor {
 cycleInterval 5
@@ -320,7 +370,7 @@ loop TRUE
 cycleInterval 40
 loop TRUE
 } 
-
+ 
 DEF solo OrientationInterpolator {
 key [0, 0.25, 0.50, 0.75,1]
 keyValue[
@@ -344,6 +394,223 @@ ROUTE solt.fraction_changed TO solo.set_fraction
 ROUTE solo.value_changed TO sol.set_rotation    
 
 }
+
+
+DEF merr OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE Mer.fraction_changed TO merr.set_fraction
+ROUTE merr.value_changed TO MERCURIO.set_rotation    
+
+}
+
+DEF Ve OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE Ven.fraction_changed TO Ve.set_fraction
+ROUTE Ve.value_changed TO VENUS.set_rotation    
+
+}
+
+
+DEF tierra OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE Ti.fraction_changed TO tierra.set_fraction
+ROUTE tierra.value_changed TO TIERRA.set_rotation    
+
+}
+
+
+DEF mar OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE ma.fraction_changed TO mar.set_fraction
+ROUTE mar.value_changed TO MARTE.set_rotation    
+
+}
+
+
+DEF jup OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE ju.fraction_changed TO jup.set_fraction
+ROUTE jup.value_changed TO JUPITER.set_rotation    
+
+}
+
+DEF sat OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE sa.fraction_changed TO sat.set_fraction
+ROUTE sat.value_changed TO SATURNO.set_rotation    
+
+}
+
+
+DEF ur OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE ura.fraction_changed TO ur.set_fraction
+ROUTE ur.value_changed TO URANO.set_rotation    
+
+}
+
+
+DEF ne OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+
+
+ROUTE net.fraction_changed TO ne.set_fraction
+ROUTE ne.value_changed TO NEPTUNO.set_rotation    
+
+}
+
+
+
 
 DEF mov_esf2 PositionInterpolator {
 key [0, 0.25, 0.50, 0.60,0.70,0.80,0.90, 1]
