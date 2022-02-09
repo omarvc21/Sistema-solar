@@ -1,0 +1,515 @@
+#VRML V2.0 utf8
+
+	 Background {
+	topUrl "https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+	leftUrl	"https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+	rightUrl "https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+	bottomUrl "https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+	backUrl	"https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+	frontUrl "https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-25_bc15ec98.jpeg?download=true"
+}
+
+
+
+
+ 
+
+Transform {
+children [
+DEF sol Transform {
+children [
+Transform {
+scale 0.6 0.6 0.6
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture ImageTexture {
+	 url "sol.jpg"
+	}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}Transform {
+children [
+DEF MERCURIO Transform {
+children [
+Transform {
+scale .05 .05 .05
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture	ImageTexture {
+
+	 url"mercurio.jpg"
+	}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+
+#VENUS
+
+Transform {
+children [
+DEF VENUS Transform {
+children [
+Transform {
+scale .09 .09 .09
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+texture	ImageTexture
+{
+ url"venus.jpg"
+}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+#TIERRA
+Transform {
+children [
+DEF TIERRA Transform {
+children [
+Transform {
+scale .08 .08 .08
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+texture	ImageTexture
+{
+
+url"a.jpg"
+}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+#MARTE
+Transform {
+children [
+DEF MARTE Transform {
+children [
+Transform {
+scale .07 .07 .07
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture	ImageTexture {
+	 url "marte.jpg"
+	}
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+
+#JUPITER
+
+
+Transform {
+children [
+DEF JUPITER Transform {
+children [
+Transform {
+scale .09 .09 .09
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture	ImageTexture {
+	 url "jupiter.jpg"
+	}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+#SATURNO
+
+Transform {
+children [
+DEF SATURNO Transform {
+children [
+Transform {
+scale .11 .11 .11
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture	ImageTexture {
+	 url"saturno.jpg"
+	}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+
+
+
+
+Transform {
+children [
+DEF CSATURNO Transform {
+children [
+Transform {
+scale .15 .05 .15
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+material Material {
+diffuseColor .45 .31 .21
+specularColor .18 .07 .05
+emissiveColor .12 .08 .05
+ambientIntensity .08
+shininess .01
+transparency .439
+}
+
+
+
+
+
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+#URANO 
+ 
+Transform {
+children [
+DEF URANO Transform {
+children [
+Transform {
+scale .12 .12 .12
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+	texture	ImageTexture {
+	 url"ura.jpg"
+	}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+
+#NEPTUNO
+
+Transform {
+children [
+DEF NEPTUNO Transform {
+children [
+Transform {
+scale .17 .17 .17
+translation 0 0 0
+children [
+Shape {
+appearance Appearance {
+texture	ImageTexture
+{
+ url"neptuno.jpg"
+}
+
+}
+geometry Sphere {
+radius 3
+}
+}
+]
+}
+]
+}
+   DEF solt TimeSensor {
+cycleInterval 8
+loop TRUE
+}
+
+DEF timer1 TimeSensor {
+cycleInterval 5
+loop TRUE
+}
+DEF timer2 TimeSensor {
+cycleInterval 0
+loop TRUE
+}DEF timer3 TimeSensor {
+cycleInterval 10
+loop TRUE
+}DEF timer4 TimeSensor {
+cycleInterval 15
+loop TRUE
+}
+DEF timer5 TimeSensor {
+cycleInterval 20
+loop TRUE
+}DEF timer6 TimeSensor {
+cycleInterval 25
+loop TRUE
+}
+DEF timer7 TimeSensor {
+cycleInterval 30
+loop TRUE
+}DEF timer8 TimeSensor {
+cycleInterval 35
+loop TRUE
+}DEF timer9 TimeSensor {
+cycleInterval 40
+loop TRUE
+} 
+
+DEF solo OrientationInterpolator {
+key [0, 0.25, 0.50, 0.75,1]
+keyValue[
+	
+	
+0 1 0 0, 
+
+0 1 0 0.78,
+
+ 0 1 0 1.57,
+ 
+0 1 0 3.14,
+
+
+0 1 0 6.28,
+
+
+]
+
+ROUTE solt.fraction_changed TO solo.set_fraction
+ROUTE solo.value_changed TO sol.set_rotation    
+
+}
+
+DEF mov_esf2 PositionInterpolator {
+key [0, 0.25, 0.50, 0.60,0.70,0.80,0.90, 1]
+keyValue [
+]
+ROUTE timer2.fraction_changed TO mov_esf2.set_fraction
+ROUTE mov_esf2.value_changed TO sol.translation
+}
+]
+}
+DEF mov_esf1 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [6 0 0
+4 0 -4
+0 0 -6
+-4 0 -4
+-6 0 0
+-4 0 4
+0 0 6
+4 0 4
+6 0 0]
+ROUTE timer1.fraction_changed TO mov_esf1.set_fraction
+ROUTE mov_esf1.value_changed TO MERCURIO.translation
+}
+]
+}DEF mov_esf3 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+7 0 0
+5 0 -5
+0 0 -7
+-5 0 -5
+-7 0 0
+-5 0 5
+0 0 7
+5 0 5
+7 0 0
+]
+ROUTE timer3.fraction_changed TO mov_esf3.set_fraction
+ROUTE mov_esf3.value_changed TO VENUS.translation
+}
+]
+}DEF mov_esf4 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+8 0 0
+6 0 -6
+0 0 -8
+-6 0 -6
+-8 0 0
+-6 0 6
+0 0 8
+6 0 6
+8 0 0
+]
+ROUTE timer4.fraction_changed TO mov_esf4.set_fraction
+ROUTE mov_esf4.value_changed TO TIERRA.translation
+}
+]
+} DEF mov_esf5 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+9 0 0
+7 0 -7
+0 0 -9
+-7 0 -7
+-9 0 0
+-7 0 7
+0 0 9
+7 0 7
+9 0 0
+]
+ROUTE timer5.fraction_changed TO mov_esf5.set_fraction
+ROUTE mov_esf5.value_changed TO MARTE.translation
+}
+]
+} DEF mov_esf6 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+10 0 0
+8 0 -8
+0 0 -10
+-8 0 -8
+-10 0 0
+-8 0 8
+0 0 10
+8 0 8
+10 0 0
+]
+ROUTE timer6.fraction_changed TO mov_esf6.set_fraction
+ROUTE mov_esf6.value_changed TO JUPITER.translation
+}
+]
+}
+DEF mov_esf7 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+11 0 0
+8 0 -9
+0 0 -11
+-9 0 -9
+-11 0 0
+-9 0 9
+0 0 11
+9 0 9
+11 0 0
+]
+ROUTE timer7.fraction_changed TO mov_esf7.set_fraction
+ROUTE mov_esf7.value_changed TO SATURNO.translation
+}
+]
+}
+DEF mov_esf8 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+12 0 0
+9 0 -10
+0 0 -12
+-10 0 -10
+-12 0 0
+-10 0 10
+0 0 12
+10 0 10
+12 0 0
+]
+ROUTE timer8.fraction_changed TO mov_esf8.set_fraction
+ROUTE mov_esf8.value_changed TO URANO.translation
+}
+]
+}
+DEF mov_esf9 PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+15 0 0
+9 0 -15
+0 0 -15
+-15 0 -15
+-15 0 0
+-10 0 15
+0 0 15
+15 0 10
+15 0 0
+]
+ROUTE timer9.fraction_changed TO mov_esf9.set_fraction
+ROUTE mov_esf9.value_changed TO NEPTUNO.translation
+}
+]
+}
+
+DEF mov_esfC PositionInterpolator {
+key [0,.125,.25,.375,.50,.625,.75,.875,1]
+keyValue [
+11 0 0
+8 0 -9
+0 0 -11
+-9 0 -9
+-11 0 0
+-9 0 9
+0 0 11
+9 0 9
+11 0 0
+]
+ROUTE timer7.fraction_changed TO mov_esfC.set_fraction
+ROUTE mov_esfC.value_changed TO CSATURNO.translation
+}
+]
+}
+
+
